@@ -1,0 +1,45 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<div ng-controller="FacilitylookupController" style="width: 800px;" class="center-block">
+    <div>
+        <div ng-hide="collapseIconHide"><label ng-hide="collapseIconHide">Show Details</label>
+            <a><img src="resources/images/collapse.jpg" ng-click="showFacilitylookupListClick()"/></a>
+        </div>
+        <div ng-hide="expandIconHide"><label ng-hide="expandIconHide">Hide Details</label>
+            <a><img src="resources/images/expand.jpg" ng-click="hideFacilitylookupListClick()"/></a>
+        </div>
+        <hr/>
+    </div>
+    <div ng-hide="facilitylookupListHide">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">ID</th>
+                    <th style="text-align: center;">Message</th>
+                    <th style="text-align: center;">Facilitylookup Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="facility in facilities">
+                    <td><span>{{facility.id}}</span></td>
+                    <td><span>{{facility.facilityLookupCode}}</span></td>
+                    <td><span>{{facility.message}}</span></td>
+                    <td  style="width:30px;text-align: center;"><button class="btn btn-mini btn-danger" >Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div ng-hide="collapseVisualizationIconHide"><label ng-hide="collapseVisualizationIconHide">Show Visualization</label>
+            <a><img src="resources/images/collapse.jpg" ng-click="showFacilityVisualizationClick()"/></a>
+        </div>
+        <div ng-hide="expandVisualizationIconHide"><label ng-hide="expandVisualizationIconHide">Hide Visualization</label>
+            <a><img src="resources/images/expand.jpg" ng-click="hideFacilityVisualizationClick()"/></a>
+        </div>
+    <hr/>
+    <div ng-hide="facilityVisualizationHide" id="test_chart"></div>
+</div>
+

@@ -1,0 +1,106 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<div ng-controller="SystemeventController">
+    <div>
+        <br/>
+        <div class="row">
+            <div class="form-group center-block" style="width: 600px;">
+                <label>Choose the field(s) you want to display</label>
+                <div class="bs-example" style="border: 1px solid #cccccc">
+                    <p>
+                        <button type="button" ng-model="customerIDDisabled" class="btn btn-primary" ng-click="customerIDButtonFieldSelected()" ng-disabled="customerIDDisabled">Customer ID</button>
+                        <button type="button" ng-model="receivedAtDisabled" class="btn btn-primary" ng-click="receivedAtButtonFieldSelected()" ng-disabled="receivedAtDisabled">Received At</button>
+                        <button type="button" ng-model="deviceReportedTimeDisabled" class="btn btn-primary" ng-click="deviceReportedTimeButtonFieldSelected()" ng-disabled="deviceReportedTimeDisabled">Device Reported Time</button>
+                        <button type="button" ng-model="facilityDisabled" class="btn btn-primary" ng-click="facilityButtonFieldSelected()" ng-disabled="facilityDisabled">Facility</button>
+                    </p>
+                    <p>
+                        <button type="button" ng-model="priorityDisabled" class="btn btn-primary" ng-click="priorityButtonFieldSelected()" ng-disabled="priorityDisabled">Priority</button>
+                        <button type="button" ng-model="fromHostDisabled" class="btn btn-primary" ng-click="fromHostButtonFieldSelected()" ng-disabled="fromHostDisabled">From Host</button>
+                        <button type="button" ng-model="messageDisabled" class="btn btn-primary" ng-click="messageButtonFieldSelected()" ng-disabled="messageDisabled">Message</button>
+                        <button type="button" ng-model="NTSeverityDisabled" class="btn btn-primary" ng-click="NTSeverityButtonFieldSelected()" ng-disabled="NTSeverityDisabled">NT Severity</button>
+                    </p>
+                    <p>
+                        <button type="button" ng-model="importanceDisabled" class="btn btn-primary" ng-click="importanceButtonFieldSelected()" ng-disabled="importanceDisabled">Importance</button>
+                        <button type="button" ng-model="eventSourceDisabled" class="btn btn-primary" ng-click="eventSourceButtonFieldSelected()" ng-disabled="eventSourceDisabled">Event Source</button>
+                        <button type="button" ng-model="eventUserDisabled" class="btn btn-primary" ng-click="eventUserButtonFieldSelected()" ng-disabled="eventUserDisabled">Event User</button>
+                        <button type="button" ng-model="eventCatrgoryDisabled" class="btn btn-primary" ng-click="eventCatButtonFieldSelected()" ng-disabled="eventCatrgoryDisabled">Event Category</button>
+                    </p>
+                    <p>
+                        <button type="button" ng-model="eventIDDisabled" class="btn btn-primary" ng-click="eventIDButtonFieldSelected()" ng-disabled="eventIDDisabled">Event ID</button>
+                        <button type="button" ng-model="eventBinaryDataDisabled" class="btn btn-primary" ng-click="eventBinaryDataButtonFieldSelected()" ng-disabled="eventBinaryDataDisabled">Event Binary Data</button>
+                        <button type="button" ng-model="maxAvailableDisabled" class="btn btn-primary" ng-click="maxAvailableButtonFieldSelected()" ng-disabled="maxAvailableDisabled">Max Available</button>
+                        <button type="button" ng-model="currUsageDisabled" class="btn btn-primary" ng-click="currUsageButtonFieldSelected()" ng-disabled="currUsageDisabled">Current Usage</button>
+                    </p>
+                    <p>
+                        <button type="button" ng-model="minimumUsageDisabled" class="btn btn-primary" ng-click="minUsageButtonFieldSelected()" ng-disabled="minimumUsageDisabled">Minimum Usage</button>
+                        <button type="button" ng-model="maximumUsageDisabled" class="btn btn-primary" ng-click="maxUsageButtonFieldSelected()" ng-disabled="maximumUsageDisabled">Maximum Usage</button>
+                        <button type="button" ng-model="infoUnitIDDisabled" class="btn btn-primary" ng-click="infoUnitIDButtonFieldSelected()" ng-disabled="infoUnitIDDisabled">Info Unit ID</button>
+                        <button type="button" ng-model="sysLogTagDisabled" class="btn btn-primary" ng-click="sysLogTagButtonFieldSelected()" ng-disabled="sysLogTagDisabled">Sys Log Tag</button>
+                    </p>
+                    <p>
+                        <button type="button" ng-model="eventLogTypeDisabled" class="btn btn-primary" ng-click="eventLogTypeButtonFieldSelected()" ng-disabled="eventLogTypeDisabled">Event Log Type</button>
+                        <button type="button" ng-model="genericFileNameDisabled" class="btn btn-primary" ng-click="genericFileNameButtonFieldSelected()" ng-disabled="genericFileNameDisabled">Generic File Name</button>
+                        <button type="button" ng-model="systemIDDisabled" class="btn btn-primary" ng-click="systemIDButtonFieldSelected()" ng-disabled="systemIDDisabled">System ID</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group center-block" style="width: 600px;">
+                <label>Fields you selected:</label>
+                <div class="bs-example" style="border: 1px solid #cccccc">
+                    <button type="button" class="btn btn-primary" ng-click="customerIDButtonFieldSelected()" ng-hide="customerIDButtonHide"><span class="glyphicon glyphicon-remove"></span>Customer ID</button>
+                    <button type="button" class="btn btn-primary" ng-click="receivedAtButtonFieldSelected()" ng-hide="receivedAtHide"><span class="glyphicon glyphicon-remove"></span>Received At</button>
+                    <button type="button" class="btn btn-primary" ng-click="deviceReportedTimeButtonFieldSelected()" ng-hide="deviceReportedTimeHide"><span class="glyphicon glyphicon-remove"></span>Device Reported Time</button>
+                    <button type="button" class="btn btn-primary" ng-click="facilityButtonFieldSelected()" ng-hide="facilityHide"><span class="glyphicon glyphicon-remove"></span>Facility</button>
+                    <button type="button" class="btn btn-primary" ng-click="priorityButtonFieldSelected()" ng-hide="priorityHide"><span class="glyphicon glyphicon-remove"></span>Priority</button>
+                    <button type="button" class="btn btn-primary" ng-click="fromHostButtonFieldSelected()" ng-hide="fromHostHide"><span class="glyphicon glyphicon-remove"></span>From Host</button>
+                    <button type="button" class="btn btn-primary" ng-click="messageButtonFieldSelected()" ng-hide="messageHide"><span class="glyphicon glyphicon-remove"></span>Message</button>
+                    <button type="button" class="btn btn-primary" ng-click="NTSeverityButtonFieldSelected()" ng-hide="NTSeverityHide"><span class="glyphicon glyphicon-remove"></span>NT Severity</button>
+                    <button type="button" class="btn btn-primary" ng-click="importanceButtonFieldSelected()" ng-hide="importanceHide"><span class="glyphicon glyphicon-remove"></span>Importance</button>
+                    <button type="button" class="btn btn-primary" ng-click="eventSourceButtonFieldSelected()" ng-hide="eventSourceHide"><span class="glyphicon glyphicon-remove"></span>Event Source</button>
+                    <button type="button" class="btn btn-primary" ng-click="eventUserButtonFieldSelected()" ng-hide="eventUserHide"><span class="glyphicon glyphicon-remove"></span>Event User</button>
+                    <button type="button" class="btn btn-primary" ng-click="eventCatButtonFieldSelected()" ng-hide="eventCatHide"><span class="glyphicon glyphicon-remove"></span>Event Category</button>
+                    <button type="button" class="btn btn-primary" ng-click="eventIDButtonFieldSelected()" ng-hide="eventIDHide"><span class="glyphicon glyphicon-remove"></span>Event ID</button>
+                    <button type="button" class="btn btn-primary" ng-click="eventBinaryDataButtonFieldSelected()" ng-hide="eventBinaryDataHide"><span class="glyphicon glyphicon-remove"></span>Event Binary Data</button>
+                    <button type="button" class="btn btn-primary" ng-click="maxAvailableButtonFieldSelected()" ng-hide="maxAvailableHide"><span class="glyphicon glyphicon-remove"></span>Max Available</button>
+                    <button type="button" class="btn btn-primary" ng-click="currUsageButtonFieldSelected()" ng-hide="currUsageHide"><span class="glyphicon glyphicon-remove"></span>Current Usage</button>
+                    <button type="button" class="btn btn-primary" ng-click="minUsageButtonFieldSelected()" ng-hide="minimumUsageHide"><span class="glyphicon glyphicon-remove"></span>Minimum Usage</button>
+                    <button type="button" class="btn btn-primary" ng-click="maxUsageButtonFieldSelected()" ng-hide="maximumUsageHide"><span class="glyphicon glyphicon-remove"></span>Maximum Usage</button>
+                    <button type="button" class="btn btn-primary" ng-click="infoUnitIDButtonFieldSelected()" ng-hide="InfoUnitIDHide"><span class="glyphicon glyphicon-remove"></span>Info Unit ID</button>
+                    <button type="button" class="btn btn-primary" ng-click="sysLogTagButtonFieldSelected()" ng-hide="sysLogTagHide"><span class="glyphicon glyphicon-remove"></span>Sys Log Tag</button>
+                    <button type="button" class="btn btn-primary" ng-click="eventLogTypeButtonFieldSelected()" ng-hide="eventLogTypeHide"><span class="glyphicon glyphicon-remove"></span>Event Log Type</button>
+                    <button type="button" class="btn btn-primary" ng-click="genericFileNameButtonFieldSelected()" ng-hide="genericFileNameHide"><span class="glyphicon glyphicon-remove"></span>Generic File Name</button>
+                    <button type="button" class="btn btn-primary" ng-click="systemIDButtonFieldSelected()" ng-hide="systemIDHide"><span class="glyphicon glyphicon-remove"></span>System ID</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group center-block" style="width: 600px;">
+                <button type="button" class="btn btn-primary" ng-click="querySystemeventClick()">Query</button>
+                <table class="table table-hover">
+                    <th>
+                    <tr>
+                        <td ng-repeat="header in headers">
+                            {{header}}
+                        </td>
+                    </tr>
+                    </th>
+                    <tbody>
+                        <tr ng-repeat="event in filteredEvents">
+                            <td>{{event.header}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div data-pagination="" data-num-pages="numPages()" 
+                     data-current-page="currentPage" data-max-size="maxSize"  
+                     data-boundary-links="true"></div>
+            </div>
+        </div>
+
+    </div>
+</div>

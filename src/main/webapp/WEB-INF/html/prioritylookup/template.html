@@ -1,0 +1,43 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<div ng-controller="PrioritylookupController" style="width: 800px;" class="center-block">
+    <div>
+        <div ng-hide="collapseIconHide"><label ng-hide="collapseIconHide">Show Details</label>
+            <a><img src="resources/images/collapse.jpg" ng-click="showPrioritylookupListClick()"/></a>
+        </div>
+        <div ng-hide="expandIconHide"><label ng-hide="expandIconHide">Hide Details</label>
+            <a><img src="resources/images/expand.jpg" ng-click="hidePrioritylookupListClick()"/></a>
+        </div>
+        <hr/>
+    </div>
+    <div ng-hide="prioritylookupListHide">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">ID</th>
+                    <th style="text-align: center;">Message</th>
+                    <th style="text-align: center;">Prioritylookup Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="priority in priorities">
+                    <td><span>{{priority.id}}</span></td>
+                    <td><span>{{priority.priorityLookupCode}}</span></td>
+                    <td><span>{{priority.message}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div ng-hide="collapseVisualizationIconHide"><label ng-hide="collapseVisualizationIconHide">Show Visualization</label>
+            <a><img src="resources/images/collapse.jpg" ng-click="showPriorityVisualizationClick()"/></a>
+        </div>
+        <div ng-hide="expandVisualizationIconHide"><label ng-hide="expandVisualizationIconHide">Hide Visualization</label>
+            <a><img src="resources/images/expand.jpg" ng-click="hidePriorityVisualizationClick()"/></a>
+        </div>
+    <hr/>
+    <div ng-hide="priorityVisualizationHide" id="test_chart"></div>
+</div>
